@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><span>2864</span>
+            <small>/位</small>
+            <input type="number" value="1" min="0" name="num">人<span>2864</span></p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    var inputs=document.getElementsByName("num");
+    inputs[0].onclick=function(){
+        var p=this.parentNode.firstChild;
+        var res=this.nextSibling.nextSibling;
+        var sum=parseInt(p.innerText)*parseInt(this.value);
+        res.innerText="￥"+sum;
+    }
+</script>
+</html>

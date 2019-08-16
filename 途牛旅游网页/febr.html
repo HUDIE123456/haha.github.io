@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div>
+    <span>￥<strong>2864</strong><small>/位</small></span>
+<br/>
+<input type="number" name="num" min="0" value="1"/>人<span>2864</span>
+</div>
+<script>
+    var inputs=document.getElementsByName("num");
+   // for(var i=0;i<inputs.length;i++){
+        inputs[0].onclick=function () {
+         var p=this.parentNode.firstChild.nextSibling.firstChild.nextSibling;
+         var res=this.nextSibling.nextSibling;
+         var sum=parseInt(p.innerText)*parseInt(this.value);
+         res.innerText="￥"+sum;
+        };
+   // }
+    //document.write("￥"+sum);
+</script>
+</body>
+</html>

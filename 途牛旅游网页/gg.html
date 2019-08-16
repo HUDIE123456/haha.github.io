@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var inputs=document.getElementById("num");
+    for(var i=0;i<inputs.length;i++){
+        inputs[i].onlick=function () {
+            var p=this.parentNode.firstChild.nextSibling.firstChild.nextSibling;
+            var res=this.nextSibling.nextSibling;
+            var sum=parseInt(p.innerText)*parseInt(this.value);
+            res.innerText="￥"+sum;//将结果存入总价元素
+        }
+    }
+</script>
+</body>
+</html>

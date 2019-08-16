@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{padding: 0;
+            margin:0;
+        }
+        #conter{
+            width:100%;
+            height:2810px;
+            border:1px solid red;
+        }
+        /*导航*/
+        nav{width:100%;height:60px;
+            border:1px solid black;
+            background:black url("../9.18项目js/img/logo.png") 100px no-repeat;
+            background-size:180px 60px;
+        }
+        nav ul li{
+            display:inline-block;
+        }
+        nav  a{
+            color: #FFFFFF;
+            text-decoration:none;
+            position:relative;
+            margin:20px;
+            top:20px;
+            left:900px;
+        }
+        nav a:hover{
+            border: #3a6587 1px solid;
+            background-color: #3a6587 ;
+            padding:20px;
+        }
+        /*头部*/
+        header{
+            width:100%;height:300px;
+            border:black 1px solid;
+            background: url("../9.18项目js/img/headline.jpg") no-repeat;
+            color: #FFFFFF;
+        }
+        header div{
+            position: relative;
+            left:450px;
+            top:120px;
+        }
+        main{
+         margin:auto;
+         width:1500px;
+         height:2090px;
+         border:1px solid red;
+        }
+        .xian{
+          width:937px;
+            height:25px;
+            border:1px solid tomato;
+            padding:10px;
+            background-color: gainsboro;
+            border-radius:1px;
+            float:left;
+        }
+        .xian .ee{
+            position: relative;
+            left:300px;
+            background-color: green;
+            margin:10px;
+        }
+        .xian .e1{
+            border-top:3px solid green;
+        }
+        .xian a{
+            text-decoration: none;
+            margin:10px;
+            color: black;
+        }
+        .t1 td p{
+            line-height:40px;
+        }
+         .t1 td  pre{
+            font-size:16px;
+        }
+        .s1{
+            color:red;
+            font-weight: bold;
+            font-size:30px;
+        }
+        .s2{
+            text-decoration:line-through;
+        }
+        .s3{
+            color: green;
+            border:1px solid green;
+            border-radius:3px;
+        }
+        .s4{
+            color: green;
+        }
+       .t1 input{
+           /* width:150px;
+            height:40px;
+            border:1px solid #dd140f;
+            border-radius:6px;
+            background-color: #dd140f;
+            color: white;*/
+        }
+        .t1 td:nth-of-type(odd):hover{
+            background:url("../9.18项目js/img/s1.jpg")no-repeat ;
+            width: 435px;height:280px;
+            box-shadow: grey 3px 2px 4px;
+            border-radius:3px;
+        }
+        .t1 td:nth-of-type(odd){
+            background:url("../9.18项目js/img/s1.jpg")no-repeat ;
+            width: 435px;
+            height:280px;
+        }
+       .t1 td:nth-of-type(even){
+            border-bottom: 1px solid gainsboro ;
+            border-right: 1px solid gainsboro ;
+            border-top: 1px solid gainsboro ;
+        }
+        main .t1{
+            float:left;
+            border:1px solid red;
+        }
+        .left{
+            float:left;
+            width:958px;
+            border: #dd140f 1px solid;
+        }
+        .aside{
+            width:500px;
+            height:1540px;
+            border:1px solid navy;
+            float:right;
+        }
+        .aside .h1 h3{
+           border:1px solid grey;
+            width:500px;
+            text-indent:15px;
+            line-height:50px;
+            background-color:darkgray;
+        }
+        .pp{
+            position: relative;
+            bottom:120px;
+            width:90px;
+            line-height:40px;
+            border:1px solid green;
+            color: white;
+            background-color:green;
+        }
+        .t2{
+            border-color: gainsboro ;
+
+        }
+        .t2 tr td{
+            height:40px;
+            border-radius:3px;
+        }
+        .t2 tr td:hover{
+            box-shadow: gainsboro 2px 1px 3px ;
+        }
+        .t2 tr{
+            background-color: gainsboro;
+        }
+        .remen{
+            width:500px;
+            height:920px;
+            border:1px solid red;
+        }
+        .remen h3{
+            border:1px solid grey;
+            width:500px;
+            text-indent:15px;
+            line-height:50px;
+            background-color:darkgray;
+        }
+        .remen div{
+            width:200px ;
+            margin-left:16px;
+            padding:15px;
+            float:left;
+        }
+        .remen div:hover{
+          box-shadow: #3a6587 1px 4px 3px;
+        }
+        .baoxiang h3{
+            border:1px solid grey;
+            width:500px;
+            text-indent:15px;
+            line-height:50px;
+            background-color:darkgray;
+        }
+
+        .jiazai{
+            width: 100%;
+            height:30px;
+            border:1px solid red;
+        }
+        .jiazai p{
+            text-align: center;
+        }
+        section{
+            width:100%;
+            height:300px;
+            background: black;
+            color: white;
+        }
+        section ul{
+            padding:10px;
+            width:300px;
+            float:left;
+            margin-left:190px;
+            list-style-type: none;
+            color:grey;
+        }
+        section ul li{
+            line-height:40px;
+        }
+        section p{
+            text-align: center;
+            color:grey;
+            clear:both;
+            line-height:70px;
+        }
+        .tb td{
+            height:50px;
+            width: 155px;
+        }
+        span:nth-of-type(1){
+
+        }
+        .tb tr:nth-of-type(1) td:nth-of-type(1){
+            background: gainsboro url("../9.18项目js/img/trea1.png")0px 15px no-repeat;
+        }
+        .tb tr:nth-of-type(1) td:nth-of-type(2){
+            background:gainsboro url("../9.18项目js/img/trea2.png")0px 15px no-repeat;
+        }
+        .tb  tr:nth-of-type(2) td:nth-of-type(1){
+            background:gainsboro url("../9.18项目js/img/trea3.png")0px 15px no-repeat;
+        }
+        .tb  tr:nth-of-type(2) td:nth-of-type(2){
+            background:gainsboro url("../9.18项目js/img/trea4.png")0px 15px no-repeat;
+        }
+        .tb tr td:hover span{
+            animation:spread 5s linear forwards;
+        }
+        .t1 tr td:nth-of-type(2){
+            text-indent:20px;
+        }
+        @keyframes spread {
+            0%{
+                margin-left:0;
+            }
+            25%{
+                margin-left:10px;
+            }
+            50%{
+                margin-left:50px;
+            }
+            75%{
+                margin-left:75px;
+            }
+            100%{
+                margin-left:10px;
+            }
+        }
+        </style>
+</head>
+<body>
+<div id="conter">
+    <nav>
+        <a href="首页.html">首页</a>
+        <a href="旅游咨询.html">旅游咨询</a>
+        <a href="机票订购.html">机票订购</a>
+        <a href="风景欣赏.html">风景欣赏</a>
+        <a href="公司简介.html">公司简介</a>
+    </nav>
+    <header>
+        <div>
+        <h1>旅游咨询</h1>
+        <h4>介绍各种最新旅游信息、资讯要闻、景点攻略等</h4>
+        </div>
+    </header>
+    <br/>
+<main>
+<div class="left">
+<div class="xian">
+    <a href="#" class="e1">限时特价</a>
+    <a href="#">热门推荐</a>
+    <a href="#" class="ee">推荐</a>
+    <a href="#" class="ee">折扣</a>
+    <a href="#" class="ee">价格</a>
+</div>
+<table class="t1"  cellpadding="0" cellspacing="10">
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <p>五，无自费，赠送600元成人卷...￥<span class="s1">2864</span>/位<del>￥3980</del></p>
+            <p> :春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <input type="number" min="0" value="1"/>人<span>2864</span>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+    <script>
+        var inputs=document.getElementsByName("num");
+        inputs[0].onclick=function(){
+        var p=this.parentNode.firstChild.nextSibling.nextSibling.
+          firstChild.nextSibling;
+        var res=this.nextSibling.nextSibling;
+        var sum=parseInt(p.innerText)*parseInt(this.value);
+        res.innerText="￥"+sum;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <h3>曼谷-芭提雅6日游</h3>
+            <br/>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <pre> 五，无自费，赠送600元成人卷...   <span class="s1">￥2864/位</span><span class="s2">￥3980</span></pre>
+            <p><span class="s3">交通</span>:春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <p><span class="s3">日期</span>:11/01、11/03、11/08...</p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <h3>曼谷-芭提雅6日游</h3>
+            <br/>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <pre> 五，无自费，赠送600元成人卷...   <span class="s1">￥2864/位</span><span class="s2">￥3980</span></pre>
+            <p><span class="s3">交通</span>:春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <p><span class="s3">日期</span>:11/01、11/03、11/08...</p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <h3>曼谷-芭提雅6日游</h3>
+            <br/>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <pre> 五，无自费，赠送600元成人卷...   <span class="s1">￥2864/位</span><span class="s2">￥3980</span></pre>
+            <p><span class="s3">交通</span>:春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <p><span class="s3">日期</span>:11/01、11/03、11/08...</p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <h3>曼谷-芭提雅6日游</h3>
+            <br/>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <pre> 五，无自费，赠送600元成人卷...   <span class="s1">￥2864/位</span><span class="s2">￥3980</span></pre>
+            <p><span class="s3">交通</span>:春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <p><span class="s3">日期</span>:11/01、11/03、11/08...</p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+    <tr>
+        <td><p class="pp">国内旅游</p></td>
+        <td>
+            <h3>曼谷-芭提雅6日游</h3>
+            <br/>
+            <p>包团优惠，超丰富景点，升级1晚国</p>
+            <pre> 五，无自费，赠送600元成人卷...   <span class="s1">￥2864/位</span><span class="s2">￥3980</span></pre>
+            <p><span class="s3">交通</span>:春秋航空、杭州出发，无需转机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="立即抢购"/></p>
+            <p><span class="s3">日期</span>:11/01、11/03、11/08...</p>
+            <br/>
+            <p>本团由海文旅行社赞助提供，截止于<span class="s4">2015-10-10</span></p>
+        </td>
+    </tr>
+</table>
+
+</div>
+<div class="aside">
+    <div class="h1">
+        <h3>景点推荐</h3>
+        <table  class="t2" border="1"  cellspacing="10"  cellpadding="0" width="483px"  >
+            <tr>
+                <td>曼谷（12）</td>
+                <td>东京（5）</td>
+                <td>西双版纳（8）</td>
+            </tr>
+            <tr >
+                <td>漓江（16）</td>
+                <td>呼伦贝尔（4）</td>
+                <td>首尔（9）</td>
+            </tr>
+            <tr>
+                <td>巴厘岛（15）</td>
+                <td>土耳其（22）</td>
+                <td>夏威夷（5）</td>
+            </tr>
+            <tr>
+                <td>巴厘岛（11）</td>
+                <td>毛里求斯（7）</td>
+                <td>普吉岛（4）</td>
+            </tr>
+            <tr>
+                <td>希腊（18）</td>
+                <td>法瑞意（8）</td>
+                <td>马尔代夫（9）</td>
+            </tr>
+            <tr>
+                <td>新西兰（16）</td>
+                <td>埃及（11)</td>
+                <td>迪拜（14）</td>
+            </tr>
+            <tr>
+                <td>斯里兰卡(7)</td>
+                <td>麦哈顿（3）</td>
+                <td>大阪（15）</td>
+            </tr>
+        </table>
+    </div>
+    <div class="remen">
+    <h3>热门旅游</h3>
+    <div>
+        <img src="../9.18项目js/img/hot1.jpg" width="200px"/>
+        <p>曼谷芭提雅-6日游</p>
+    </div>
+    <div>
+        <img src="../9.18项目js/img/hot2.jpg" width="200px"/>
+        <p>马尔代夫双鱼六日游</p>
+    </div>
+    <div>
+        <img src="../9.18项目js/img/hot3.jpg" width="200px"/>
+        <p>海南双飞五日游</p>
+    </div>
+        <div>
+            <img src="../9.18项目js/img/hot4.jpg" width="200px"/>
+            <p>福山大阪东京八日游</p>
+        </div>
+        <div>
+            <img src="../9.18项目js/img/hot5.jpg" width="200px"/>
+            <p>法瑞意德十二日游</p>
+        </div>
+        <div>
+            <img src="../9.18项目js/img/hot6.jpg" width="200px"/>
+            <p>巴厘岛六日游</p>
+        </div>
+        <div>
+            <img src="../9.18项目js/img/hot7.jpg" width="200px"/>
+            <p>塞舌尔迪拜九日游</p>
+        </div>
+        <div>
+            <img src="../9.18项目js/img/hot8.jpg" width="200px"/>
+            <p>花样土耳其10日游</p>
+        </div>
+    </div>
+    <div class="baoxiang">
+       <h3>旅游百宝箱</h3>
+       <table class="tb" border="1" cellpadding="0" cellspacing="10" width="500px">
+       <tr>
+           <td><span>天气预报</span></td>
+           <td><span>火车票查询</span></td>
+       </tr>
+       <tr>
+           <td><span>航班查询</span></td>
+           <td><span>地铁线查询</span></td>
+       </tr>
+       </table>
+    </div>
+</div>
+</main>
+<div class="jiazai">
+<p>加载更多...</p>
+</div>
+    <section>
+        <ul>
+            <h3>合作伙伴</h3>
+            <br/>
+            <li>途牛旅游网</li>
+            <li>驴妈妈旅游网</li>
+            <li>携程旅游</li>
+            <li>中国青年旅行社</li>
+        </ul>
+        <ul>
+            <h3>旅游FAQ</h3>
+            <br/>
+            <li>途牛旅游网</li>
+            <li>驴妈妈旅游网</li>
+            <li>携程旅游</li>
+            <li>中国青年旅行社</li>
+        </ul>
+        <ul>
+            <h3>联系方式</h3>
+            <br/>
+            <li>途牛旅游网</li>
+            <li>驴妈妈旅游网</li>
+            <li>携程旅游</li>
+            <li>中国青年旅行社</li>
+        </ul>
+        <p>海文旅行社 沪ICP设备12322002号 旅行社经营许可证 L-Y-C120</p>
+    </section>
+</div>
+</body>
+</html>

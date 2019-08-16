@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style type="text/css">
+        *{padding: 0;
+          margin:0;
+        }
+    #conter{
+        width:100%;
+        border:1px solid white;
+    }
+    /*导航*/
+     nav{width:100%;height:60px;
+         border:1px solid black;
+         background:black url("../9.18项目js/img/logo.png") 100px no-repeat;
+         background-size:180px 60px;
+     }
+     nav ul li{
+         display:inline-block;
+     }
+     nav  a{
+         color: #FFFFFF;
+         text-decoration:none;
+         position:relative;
+         margin:20px;
+         top:20px;
+         left:900px;
+     }
+     nav a:hover{
+         border: #3a6587 1px solid;
+         background-color:#3a6587 ;
+         padding:20px;
+     }
+     /*头部*/
+     header{
+         width:100%;height:600px;
+         border:black 1px solid;
+         background: url("../9.18项目js/img/search.jpg") no-repeat;
+     }
+     header input{
+         position:relative;
+         top:300px;
+         left:700px;
+     }
+     header input:nth-of-type(1){
+         width:300px;
+         height:40px;
+         border-radius:7px;
+         border:1px solid black;
+     }
+     header input:nth-of-type(2){
+         width:60px;
+         height:40px;
+         border-radius:7px;
+         border:1px solid black;
+     }
+     main{
+         width:100%;
+         height:1375px;
+         border: white 1px solid;
+     }
+     main h2,h4{
+         text-align: center;
+     }
+     main .manx{
+         margin:auto;
+         width:1500px;
+         height:1260px;
+         border:1px solid white;
+     }
+     main .manx div{
+         width:380px ;
+         margin:55px;
+         height:300px;
+         border: white 1px solid;
+         float: left;
+         border-radius:5px;
+     }
+     main .manx div:hover{
+         box-shadow: grey 1px 3px 5px;
+     }
+    .manx p{
+         margin:10px;
+    }
+    .manx pre{
+        font-weight: bold;
+    }
+    .manx pre span{
+        color:red;
+        font-size:20px;
+    }
+   section{
+       width:100%;
+       height:300px;
+       background: black;
+       color: white;
+   }
+   section ul{
+       padding:10px;
+       width:300px;
+       float:left;
+       margin-left:190px;
+       list-style-type: none;
+       color:grey;
+   }
+        section ul li{
+            line-height:40px;
+        }
+   section p{
+       text-align: center;
+       color:grey;
+       clear:both;
+       line-height:70px;
+   }
+    </style>
+</head>
+<body>
+<div id="conter">
+<nav>
+    <a href="首页.html">首页</a>
+    <a href="旅游咨询.html">旅游咨询</a>
+    <a href="机票订购.html ">机票订购</a>
+    <a href="风景欣赏.html ">风景欣赏</a>
+    <a href="公司简介.html">公司简介</a>
+</nav>
+
+<header>
+    <input type="text" id="tt" placeholder="请输入景点或城市"/>
+    <input type="submit" value="搜索" onclick="alerts()">
+    <script>
+    function alerts(){
+      if(tt.value==""){
+          alert("请输入完整信息");
+      }
+    }
+    </script>
+</header>
+<main>
+    <br/>
+    <h2>热门旅游</h2>
+    <br/>
+    <h4>国内旅游、国外旅游、自助旅游、自驾旅游、邮轮签证、主题旅游等各种最新热门旅游推荐</h4>
+    <br/>
+<div class="manx">
+<div>
+<img src="../9.18项目js/img/hot1.jpg" width="380px" height="200px"/>
+<p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                 满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot2.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot3.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot4.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot5.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot6.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot7.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre><span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/hot8.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre> <span>￥2864起</span>                                  满意度77%</pre>
+</div>
+<div>
+    <img src="../9.18项目js/img/tour9.jpg" width="380px" height="200px"/>
+    <p>高山大阪-东京8日游，两天自由，无导游按 安排 <br/>
+        高山大阪-东京8日游 </p>
+    <pre><span>￥2864起</span>                                  满意度77%</pre>
+</div>
+</div>
+</main>
+<section>
+    <ul>
+        <h3>合作伙伴</h3>
+        <br/>
+        <li>途牛旅游网</li>
+        <li>驴妈妈旅游网</li>
+        <li>携程旅游</li>
+        <li>中国青年旅行社</li>
+    </ul>
+    <ul>
+        <h3>旅游FAQ</h3>
+        <br/>
+        <li>途牛旅游网</li>
+        <li>驴妈妈旅游网</li>
+        <li>携程旅游</li>
+        <li>中国青年旅行社</li>
+    </ul>
+    <ul>
+        <h3>联系方式</h3>
+        <br/>
+        <li>途牛旅游网</li>
+        <li>驴妈妈旅游网</li>
+        <li>携程旅游</li>
+        <li>中国青年旅行社</li>
+    </ul>
+    <p>海文旅行社 沪ICP设备12322002号 旅行社经营许可证 L-Y-C120</p>
+</section>
+</div>
+</body>
+</html>
