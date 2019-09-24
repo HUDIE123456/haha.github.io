@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style>
+    html,
+    body,
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+    </style>
+    <title>圆的绘制和编辑</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=7f15e58cd9ff4e3bccf2da92ee1d8d0d&plugin=AMap.CircleEditor"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+</head>
+<body>
+<div id="container"></div>
+  <p id='result'></p>
+<script type="text/javascript">
+    var map = new AMap.Map("container", {
+        center: [113.767581,34.757656],
+        zoom: 14
+    });
+
+    var circle = new AMap.Circle({
+        center: [113.767581,34.757656],
+        radius: 1000, //半径
+        borderWeight: 3,
+        strokeColor: "#FF33FF", 
+        strokeOpacity: 1,
+        strokeWeight: 6,
+        strokeOpacity: 0.2,
+        fillOpacity: 0.4,
+        strokeStyle: 'dashed',
+        strokeDasharray: [10, 10], 
+        // 线样式还支持 'dashed'
+        fillColor: '#1791fc',
+        zIndex: 50,
+    })
+
+    circle.setMap(map)
+    // 缩放地图到合适的视野级别
+    map.setFitView([ circle ])
+
+    var circleEditor = new AMap.CircleEditor(map, circle)
+
+    circleEditor.on('move', function(event) {
+        log.info('触发事件：move')
+    })
+
+    circleEditor.on('adjust', function(event) {
+        log.info('触发事件：adjust')
+    })
+
+    circleEditor.on('end', function(event) {
+        log.info('触发事件： end')
+        // event.target 即为编辑后的圆形对象
+    })
+        AMap.plugin('AMap.Geolocation', function() {
+        var geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 1000,          //超过10秒后停止定位，默认：5s
+            buttonPosition:'RB',    //定位按钮的停靠位置
+            zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+
+        });
+        map.addControl(geolocation);
+        geolocation.getCurrentPosition(function(status,result){
+            if(status=='complete'){
+                onComplete(result)
+            }else{
+                onError(result)
+            }
+        });
+    });
+    //解析定位结果
+    function onComplete(data) {   
+        var str = [];
+        str.push( data.position);
+        document.getElementById('result').innerHTML = str;
+      var mm=data.position+''
+     var lngX = mm.split(',')[0];
+    var latY = mm.split(',')[1];
+      var lo=new AMap.LngLat(lngX,latY)     
+    var m1 = new AMap.Marker({
+        map: map,
+        draggable:true,
+        position: new AMap.LngLat(113.767581,34.757656)
+    });
+    var m2 = new AMap.Marker({
+        map: map,
+        draggable:true,
+        position:lo
+    });
+    map.setFitView();
+    var line,text;
+    function computeDis(){
+        var p1 = m1.getPosition();
+        var p2 = m2.getPosition();
+        var textPos = p1.divideBy(2).add(p2.divideBy(2));
+        var distance = Math.round(p1.distance(p2));
+        var path = [p1,p2];
+        if(!line){
+            line = new AMap.Polyline({
+           		map:map,
+              	strokeColor:'#80d8ff',
+              	isOutline:true,
+              	outlineColor:'white',
+                path:path
+            });
+        }else{
+            line.setPath(path);
+        }
+        if(!text){
+            text = new AMap.Text({
+              	text:'两点相距'+distance+'米',          
+                position: textPos,
+                map:map,
+              	style:{'background-color':'#29b6f6',
+        				'border-color':'#e1f5fe',
+        				'font-size':'12px'}
+            })
+           if(distance<=10000){
+             
+           }
+        }else{
+            text.setText('两点相距'+distance+'米')
+            text.setPosition(textPos)       
+        }
+    }
+    computeDis();
+    m1.on('dragging', computeDis)
+    m2.on('dragging', computeDis)  
+    }
+    //解析定位错误信息
+    function onError(data) {
+        document.getElementById('status').innerHTML='定位失败'
+        document.getElementById('result').innerHTML = '失败原因排查信息:'+data.message;
+    }  
+  
+
+  
+  
+  
+  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+  
+    
+  
+
+ 
+ 
